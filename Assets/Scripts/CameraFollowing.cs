@@ -31,6 +31,9 @@ public class CameraFollowing : MonoBehaviour
     private void UpdatePosition(GameObject newBlock)
     {
         StartCoroutine(UpdateCameraPositionSmoothly(newBlock));
+        spawnPoint.transform.position = new Vector3(spawnPoint.transform.position.x,
+            newBlock.transform.position.y + spawnOffset,
+            spawnPoint.transform.position.z);
     }
     private IEnumerator UpdateCameraPositionSmoothly(GameObject block)
     {
@@ -46,7 +49,6 @@ public class CameraFollowing : MonoBehaviour
             transform.position = Vector3.Lerp(startCam, targetCam, elapsed / duration);
             yield return null;
         }
-
         transform.position = targetCam;
     }
 
