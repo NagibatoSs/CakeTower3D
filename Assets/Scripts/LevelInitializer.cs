@@ -5,9 +5,9 @@ using Zenject;
 public class LevelInitializer : MonoBehaviour
 {
     [Inject] GameStateMachine stateMachine;
-    [SerializeField] LevelsScriptableModel levelsData;
-    [SerializeField] PlayerScriptableModel playerData;
-    [SerializeField] LevelDataReseter levelReseter;
+    [Inject] PlayerScriptableModel playerData;
+    [Inject] LevelsScriptableModel levelsData;
+    [Inject] LevelDataReseter levelReseter;
 
     [SerializeField] BlockSpawner spawner;
     [SerializeField] Timer timer;

@@ -6,7 +6,7 @@ public class WinBlocksCondition : MonoBehaviour
 {
     [Inject] TowerManager towerManager;
     [Inject] GameStateMachine gameStateMachine;
-    [SerializeField] LevelInitializer levelInitializer;
+    [Inject] LevelInitializer levelInitializer;
 
     private void OnEnable()
     {

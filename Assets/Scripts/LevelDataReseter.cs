@@ -4,8 +4,8 @@ using Zenject;
 public class LevelDataReseter : MonoBehaviour
 {
     [Inject] TowerManager towerManager;
-    [SerializeField] PointsManager pointsManager;
-    [SerializeField] TowerHeightManager heightManager;
+    [Inject] PointsManager pointsManager;
+    [Inject] TowerHeightManager heightManager;
     [SerializeField] Timer timer;
     public void CleanData()
     {

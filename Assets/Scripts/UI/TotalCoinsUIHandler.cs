@@ -1,9 +1,10 @@
 using TMPro;
 using UnityEngine;
+using Zenject;
 
 public class TotalCoinsUIHandler : MonoBehaviour
 {
-    [SerializeField] PlayerScriptableModel playerScriptableModel;
+    [Inject] PlayerScriptableModel playerScriptableModel;
     [SerializeField] TMP_Text totalCoinsText;
 
     private void OnEnable()

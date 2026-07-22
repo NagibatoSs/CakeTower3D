@@ -1093,7 +1093,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalCoinsText: {fileID: 66864946}
   rewardCoinsText: {fileID: 527716725}
-  rewardSystem: {fileID: 1586540178}
   animationDelay: 0.1
   delayBeforeAnimation: 0.7
 --- !u!1 &113533083
@@ -2455,8 +2454,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60af0e810d5b3e647bdab966d4f50f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelInitializer: {fileID: 1664958252}
-  heightManager: {fileID: 1706641167}
   currentHeightText: {fileID: 1931589578}
   targetHeightText: {fileID: 83441108}
 --- !u!1 &472724771
@@ -2499,7 +2496,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0024414062, y: -0.00048828125}
+  m_AnchoredPosition: {x: -0.001953125, y: 0}
   m_SizeDelta: {x: -0.0048828125, y: 0.00048828125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &472724773
@@ -4224,8 +4221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c72e5ca650f224340bebf29ff8ec75c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heightManager: {fileID: 1706641167}
-  levelInitializer: {fileID: 1664958252}
   currentHeightText: {fileID: 1926153825}
   targetHeightText: {fileID: 840087872}
 --- !u!1 &582579687
@@ -4271,7 +4266,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0024414062, y: -0.00048828125}
+  m_AnchoredPosition: {x: -0.001953125, y: 0}
   m_SizeDelta: {x: -0.0048828125, y: 0.00048828125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &582579689
@@ -4484,7 +4479,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rewardCoins: {fileID: 100842933}
-  sfxPlayer: {fileID: 610679004}
   crunchSFX: {fileID: 11400000, guid: 8826ae9650e4b2442b50d8ec7353ec7b, type: 2}
   blockSetSFX: {fileID: 11400000, guid: fd55c2f64b23d254a9581a10ecc16c31, type: 2}
   coinSFX: {fileID: 11400000, guid: fc3fbc7bf5772104b9b0ecc4859e6be2, type: 2}
@@ -4657,7 +4651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocksRoot: {fileID: 1177403045}
-  crunchDuration: 0.015
+  crunchDuration: 0.01
 --- !u!1 &675475739
 GameObject:
   m_ObjectHideFlags: 0
@@ -6101,7 +6095,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7e30024090fe94d9f928ad8e5868e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScriptableModel: {fileID: 11400000, guid: 60a5ec19c3a3f544185b1e301dfe6c57, type: 2}
   totalCoinsText: {fileID: 910434989}
 --- !u!1 &845600772
 GameObject:
@@ -7950,7 +7943,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8d17c4c60d81b74b87a3c8990fcc4e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelInitializer: {fileID: 1664958252}
   currentLevelText: {fileID: 54939921}
 --- !u!114 &1077969393
 MonoBehaviour:
@@ -8033,7 +8025,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0024414062, y: -0.00048828125}
+  m_AnchoredPosition: {x: -0.001953125, y: 0}
   m_SizeDelta: {x: -0.0048828125, y: 0.00048828125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1086704829
@@ -8129,7 +8121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63218b9767224974aa58ae54e9d609b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelInitializer: {fileID: 1664958252}
 --- !u!4 &1105158534
 Transform:
   m_ObjectHideFlags: 0
@@ -10287,7 +10278,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0024414062, y: -0.00048828125}
+  m_AnchoredPosition: {x: -0.001953125, y: 0}
   m_SizeDelta: {x: -0.0048828125, y: 0.00048828125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1520745568
@@ -10785,7 +10776,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsValueText: {fileID: 1525450206}
-  pointsManager: {fileID: 1706641165}
 --- !u!114 &1563730466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10921,11 +10911,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1586540177}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9a4417dd5d7d9742af737f1c64ae8f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 845812ee9eb90954a8356d47f8474cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScriptableModel: {fileID: 11400000, guid: 60a5ec19c3a3f544185b1e301dfe6c57, type: 2}
-  pointManager: {fileID: 1706641165}
 --- !u!4 &1586540179
 Transform:
   m_ObjectHideFlags: 0
@@ -11489,8 +11477,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d01e22fedf1528b41882805864429379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsManager: {fileID: 1706641165}
-  heightManager: {fileID: 1706641167}
   timer: {fileID: 1926805597}
 --- !u!114 &1664958252
 MonoBehaviour:
@@ -11504,9 +11490,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea684a1173c7371469329377b888af53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelsData: {fileID: 11400000, guid: 9eb8d8718439f9a4d8f6201c6d1f9fc3, type: 2}
-  playerData: {fileID: 11400000, guid: 60a5ec19c3a3f544185b1e301dfe6c57, type: 2}
-  levelReseter: {fileID: 1664958251}
   spawner: {fileID: 962313819}
   timer: {fileID: 1926805597}
 --- !u!4 &1664958253
@@ -11820,6 +11803,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerManager: {fileID: 612525535}
+  pointsManager: {fileID: 1706641165}
+  heightManager: {fileID: 1706641167}
+  levelInitializer: {fileID: 1664958252}
+  playerData: {fileID: 11400000, guid: 60a5ec19c3a3f544185b1e301dfe6c57, type: 2}
+  sfxController: {fileID: 610679004}
+  levelaScriptableModel: {fileID: 11400000, guid: 9eb8d8718439f9a4d8f6201c6d1f9fc3, type: 2}
+  levelReseter: {fileID: 1664958251}
+  rewardSystem: {fileID: 1586540178}
 --- !u!114 &1711642874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12157,7 +12148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.8000488, y: 21.5}
+  m_AnchoredPosition: {x: -3.7998047, y: 21.5}
   m_SizeDelta: {x: 1049.6, y: 2400.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1821188435
@@ -14005,7 +13996,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2042718285}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 003edead97894ad41b99eaeff6da0642, type: 3}
+  m_Script: {fileID: 11500000, guid: eee7b8885467b6b44816f00aff1ef462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 2042718286}
@@ -14276,7 +14267,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 38.399902, y: -41.200195}
+  m_AnchoredPosition: {x: 38.40039, y: -41.20117}
   m_SizeDelta: {x: 784.4, y: 530.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2074538686
@@ -14911,7 +14902,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 179, y: -249.90002}
+  m_AnchoredPosition: {x: 179, y: -249.90039}
   m_SizeDelta: {x: 240, y: 158.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2118399017

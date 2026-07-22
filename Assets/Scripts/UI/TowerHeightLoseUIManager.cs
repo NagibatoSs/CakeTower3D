@@ -1,10 +1,11 @@
 using TMPro;
 using UnityEngine;
+using Zenject;
 
 public class TowerHeightLoseUIManager : MonoBehaviour
 {
-    [SerializeField] LevelInitializer levelInitializer;
-    [SerializeField] TowerHeightManager heightManager;
+    [Inject] LevelInitializer levelInitializer;
+    [Inject] TowerHeightManager heightManager;
     [SerializeField] TMP_Text currentHeightText;
     [SerializeField] TMP_Text targetHeightText;
 

@@ -48,11 +48,17 @@ public class TowerManager : MonoBehaviour
     }
     private void HandleBlockLanded(GameObject block)
     {
+        if (currentDetector != null)
+        {
+            currentDetector.OnLanded -= HandleBlockLanded;
+            currentDetector = null;
+        }
         StartCoroutine(PushWithCrunchSequence(block));
     }
 
     private IEnumerator PushWithCrunchSequence(GameObject newBlock)
     {
+        Debug.Log($"START PUSH {newBlock.name} frame {Time.frameCount}");
         while (tower.Count > 0)
         {
             GameObject peek = tower.Peek;
@@ -73,14 +79,15 @@ public class TowerManager : MonoBehaviour
             currentDetector = null;
         }
         tower.Push(newBlock);
+        Debug.Log($"Added block {newBlock.name} pos {newBlock.transform.position}");
         OnBlockAdded?.Invoke(newBlock);
     }
 
     private IEnumerator CrunchPeekBlock(GameObject peek)
     {
-        OnCrunch?.Invoke(peek);
         tower.Pop();
-
+        Debug.Log($"Crunch block {peek} pos {peek.transform.position}");
+        OnCrunch?.Invoke(peek);
         yield return new WaitForSeconds(crunchDuration);
         peek.GetComponent<PoolItem>().ReturnToPool();
     }

@@ -1,9 +1,10 @@
 using TMPro;
 using UnityEngine;
+using Zenject;
 
 public class LevelUIHandler : MonoBehaviour
 {
-    [SerializeField] LevelInitializer levelInitializer;
+    [Inject] LevelInitializer levelInitializer;
     [SerializeField] TMP_Text currentLevelText;
 
     private void OnEnable()

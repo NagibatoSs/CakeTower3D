@@ -1,10 +1,11 @@
 using TMPro;
 using UnityEngine;
+using Zenject;
 
 public class PointsUIHandler : MonoBehaviour
 {
     [SerializeField] TMP_Text pointsValueText;
-    [SerializeField] PointsManager pointsManager;
+    [Inject] PointsManager pointsManager;
 
     private void OnEnable()
     {

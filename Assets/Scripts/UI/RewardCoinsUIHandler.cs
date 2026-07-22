@@ -2,12 +2,13 @@ using UnityEngine;
 using System;
 using TMPro;
 using System.Collections;
+using Zenject;
 
 public class RewardCoinsUIHandler : MonoBehaviour
 {
     [SerializeField] TMP_Text totalCoinsText;
     [SerializeField] TMP_Text rewardCoinsText;
-    [SerializeField] RewardSystem rewardSystem;
+    [Inject] RewardSystem rewardSystem;
     [SerializeField] float animationDelay = 0.05f;
     [SerializeField] float delayBeforeAnimation = 1f;
     public Action OnCoinAdd;

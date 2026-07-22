@@ -6,8 +6,9 @@ using Zenject;
 public class SFXGameBinder : MonoBehaviour
 {
     [Inject] private TowerManager towerManager;
+    [Inject] private SFXController sfxPlayer;
+
     [SerializeField] private RewardCoinsUIHandler rewardCoins;
-    [SerializeField] private SFXController sfxPlayer;
 
     [SerializeField] private SFXData crunchSFX;
     [SerializeField] private SFXData blockSetSFX;

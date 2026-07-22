@@ -5,8 +5,8 @@ using Zenject;
 public class RewardSystem : MonoBehaviour
 {
     [Inject] GameStateMachine gameStateMachine;
-    [SerializeField] PlayerScriptableModel playerScriptableModel;
-    [SerializeField] PointsManager pointManager;
+    [Inject] PointsManager pointManager;
+    [Inject] PlayerScriptableModel playerScriptableModel;
     public Action<int, int> OnReward;
     private void OnEnable()
     {

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Rigidbody))]
 public class SizeChanger : MonoBehaviour
 {
     [SerializeField] float maxSizeMultiplier = 1.5f;

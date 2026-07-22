@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 914447155103068173}
   - component: {fileID: 2425565360111535335}
   - component: {fileID: 945414943203944294}
-  - component: {fileID: 3079805700415073075}
+  - component: {fileID: 1971483707580273331}
   m_Layer: 0
   m_Name: CrunchBlock
   m_TagString: Untagged
@@ -170,7 +170,8 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 72
---- !u!114 &3079805700415073075
+  isLanded: 0
+--- !u!114 &1971483707580273331
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,7 +180,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 518637389413037205}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 999bf280fbdd86443ba66782ca0fa95c, type: 3}
+  m_Script: {fileID: 11500000, guid: f8e1c5ba3285a3c4a8a1621726a88ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detector: {fileID: 945414943203944294}
+  meshRenderer: {fileID: 1408707758879941672}
+  animationTime: 0.3
+  emissionFlashColor: {r: 0.8, g: 0.8, b: 0.8, a: 0.8}
