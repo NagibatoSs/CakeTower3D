@@ -1,9 +1,10 @@
 using System;
 using UnityEngine;
+using Zenject;
 
 public class RewardSystem : MonoBehaviour
 {
-    [SerializeField] GameStateMachine gameStateMachine;
+    [Inject] GameStateMachine gameStateMachine;
     [SerializeField] PlayerScriptableModel playerScriptableModel;
     [SerializeField] PointsManager pointManager;
     public Action<int, int> OnReward;

@@ -1,10 +1,11 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class SFXGameBinder : MonoBehaviour
 {
-    [SerializeField] private TowerManager towerManager;
+    [Inject] private TowerManager towerManager;
     [SerializeField] private RewardCoinsUIHandler rewardCoins;
     [SerializeField] private SFXController sfxPlayer;
 

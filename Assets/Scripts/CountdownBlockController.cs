@@ -2,21 +2,17 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using Zenject;
 
 public class CountdownBlockController : MonoBehaviour
 {
-    [SerializeField] TMP_Text timerText;
-    [SerializeField] float animationDuration = 0.25f;
-    [SerializeField] float goTextDuration = 0.2f;
-    [SerializeField] CanvasGroup countdownGroup;
-    [SerializeField] GameStateMachine gameStateMachine;
-    private Transform textTransform;
+    [Inject] GameStateMachine gameStateMachine;
+    [SerializeField] private float goDuration = 0.2f;
+    [SerializeField] private int countdownValue = 3;
+    [SerializeField] private string goText = "Вперед!";
     public Action OnCountdownFinished;
-
-    private void Awake()
-    {
-        textTransform = timerText.transform;
-    }
+    public Action OnCountdownStarted;
+    public Action<string> OnCountdownChanged;
 
     private void OnEnable()
     {
@@ -38,54 +34,21 @@ public class CountdownBlockController : MonoBehaviour
 
     private void StartCountdown()
     {
-        timerText.text = "";
-        timerText.transform.localScale = Vector3.one;
-
-        countdownGroup.alpha = 1;
-        countdownGroup.blocksRaycasts = true;
-
+        OnCountdownStarted?.Invoke();
         StartCoroutine(Countdown());
     }
 
 
     private IEnumerator Countdown()
     {
-        timerText.text = "3";
-        yield return PopAnimation();
-        yield return new WaitForSeconds(Mathf.Max(0, 1 - animationDuration));
-
-        timerText.text = "2";
-        yield return PopAnimation();
-        yield return new WaitForSeconds(Mathf.Max(0, 1 - animationDuration));
-
-        timerText.text = "1";
-        yield return PopAnimation();
-        yield return new WaitForSeconds(Mathf.Max(0, 1 - animationDuration));
-
-        timerText.text = "Вперед!";
-        yield return PopAnimation();
-        yield return new WaitForSeconds(goTextDuration);
-
-        OnCountdownFinished?.Invoke();
-
-        countdownGroup.alpha = 0;
-        countdownGroup.blocksRaycasts = false;
-    }
-
-    IEnumerator PopAnimation()
-    {
-        float t = 0;
-
-        while (t < animationDuration)
+        for(int i = countdownValue; i > 0; i--)
         {
-            t += Time.deltaTime;
-
-            float cubic = Mathf.Sin(t / animationDuration * Mathf.PI * 0.5f);
-
-            textTransform.localScale = Vector3.Lerp(Vector3.one * 0.5f, Vector3.one * 1.2f, cubic);
-
-            yield return null;
+            OnCountdownChanged?.Invoke(i.ToString());
+            yield return new WaitForSeconds(1f);
         }
+        OnCountdownChanged?.Invoke(goText);
+        yield return new WaitForSeconds(goDuration);
+        OnCountdownFinished?.Invoke();
 
     }
 

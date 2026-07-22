@@ -1,10 +1,11 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using Zenject;
 
 public class UIController : MonoBehaviour
 {
+    [Inject] private GameStateMachine stateMachine;
     [SerializeField] private GameObject safeAreaUi;
-    [SerializeField] private GameStateMachine stateMachine;
     [SerializeField] GameObject menuCanvas;
     [SerializeField] GameObject gameCanvas;
     [SerializeField] GameObject loseCanvas;
@@ -28,54 +29,30 @@ public class UIController : MonoBehaviour
     private void OpenGameStateUI(GameState state)
     {
         if (currentCanvas != null)
-            HideCurrentCanvas();
+            currentCanvas.SetActive(false);
         switch (state)
         {
             case GameState.Menu:
-                OpenMenuUI();
+                SetCanvasActive(menuCanvas);
                 break;
 
             case GameState.Game:
-                OpenGameUI();
+                SetCanvasActive(gameCanvas);
                 break;
 
             case GameState.Lose:
-                OpenEndGameUI();
+                SetCanvasActive(loseCanvas);
                 break;
 
             case GameState.Win:
-                OpenWinGameUI();
+                SetCanvasActive(winCanvas);
                 break;
         }
     }
-    private void OpenMenuUI()
-    {
-        SetCanvasActive(menuCanvas);
-    }
-
-    private void OpenGameUI()
-    {
-        SetCanvasActive(gameCanvas);
-    }
-
-    private void OpenEndGameUI()
-    {
-        SetCanvasActive(loseCanvas);
-    }
-
-    private void OpenWinGameUI()
-    {
-        SetCanvasActive(winCanvas);
-    }
-
     private void SetCanvasActive(GameObject canvas)
     {
         canvas.SetActive(true);
         currentCanvas = canvas;
     }
 
-    private void HideCurrentCanvas()
-    {
-        currentCanvas.SetActive(false);
-    }
 }

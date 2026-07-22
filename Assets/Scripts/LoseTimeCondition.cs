@@ -1,9 +1,10 @@
 using UnityEngine;
+using Zenject;
 
 public class LoseTimeCondition : MonoBehaviour
 {
     [SerializeField] Timer timer;
-    [SerializeField] GameStateMachine gameStateMachine;
+    [Inject] GameStateMachine gameStateMachine;
 
     private void OnEnable()
     {

@@ -1,12 +1,13 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using Zenject;
 
 public class ClickHandler : MonoBehaviour
 {
-    [SerializeField] GameStateMachine stateMachine;
-    [SerializeField] Tower tower;
+    [Inject] GameStateMachine stateMachine;
     public static ClickHandler Instance { get; private set; }
     public event Action OnScreenClick;
 
@@ -43,7 +44,7 @@ public class ClickHandler : MonoBehaviour
             position = screenPosition
         };
 
-        var results = new System.Collections.Generic.List<RaycastResult>();
+        var results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventData, results);
 
         foreach (var r in results)

@@ -5,8 +5,8 @@ using UnityEngine;
 public class TowerManager : MonoBehaviour
 {
     [SerializeField] Transform blocksRoot;
-    public GameObject TowerRoot => towerRoot;
-    private GameObject towerRoot;
+    [SerializeField] float crunchDuration = 0.015f;
+    public GameObject TowerRoot { get; private set; }
 
     private Tower tower = new Tower();
     public GameObject TowerPeek => tower.Peek;
@@ -16,15 +16,23 @@ public class TowerManager : MonoBehaviour
 
     public event Action<GameObject> OnCrunch;
     public event Action<GameObject> OnBlockAdded;
+    public void Subscribe(GameObject block)
+    {
+        if (currentDetector != null)
+            currentDetector.OnLanded -= HandleBlockLanded;
 
-    public void SetDependencies(LandingDetector detector)
+        currentDetector = block.GetComponent<LandingDetector>();
+        if (currentDetector != null)
+            currentDetector.OnLanded += HandleBlockLanded;
+    }
+
+    private void OnDisable()
     {
         if (currentDetector != null)
         {
             currentDetector.OnLanded -= HandleBlockLanded;
+            currentDetector = null;
         }
-        currentDetector = detector;
-        currentDetector.OnLanded += HandleBlockLanded;
     }
     public void ResetTower()
     {
@@ -36,7 +44,7 @@ public class TowerManager : MonoBehaviour
                 poolItem.ReturnToPool();
         }
 
-        towerRoot = null;
+        TowerRoot = null;
     }
     private void HandleBlockLanded(GameObject block)
     {
@@ -56,7 +64,7 @@ public class TowerManager : MonoBehaviour
         }
         if (tower.Count == 0)
         {
-            towerRoot = newBlock;
+            TowerRoot = newBlock;
         }
         
         if (currentDetector != null)
@@ -73,7 +81,7 @@ public class TowerManager : MonoBehaviour
         OnCrunch?.Invoke(peek);
         tower.Pop();
 
-        yield return new WaitForSeconds(0.015f);
+        yield return new WaitForSeconds(crunchDuration);
         peek.GetComponent<PoolItem>().ReturnToPool();
     }
 }

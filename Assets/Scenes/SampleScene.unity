@@ -1505,9 +1505,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2011573303}
-        m_TargetAssemblyTypeName: GameStateMachine, Assembly-CSharp
-        m_MethodName: SetGame
+      - m_Target: {fileID: 539736589}
+        m_TargetAssemblyTypeName: UIPanel, Assembly-CSharp
+        m_MethodName: OnRetryClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1931,7 +1931,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611deeab6b1139b44af7a128260a21be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerManager: {fileID: 612525535}
 --- !u!4 &308269458
 Transform:
   m_ObjectHideFlags: 0
@@ -2191,7 +2190,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 962313818}
-  towerManager: {fileID: 612525535}
   cameraOffset: 4
   spawnOffset: 7
   smoothTime: 0.5
@@ -2946,9 +2944,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2011573303}
-        m_TargetAssemblyTypeName: GameStateMachine, Assembly-CSharp
-        m_MethodName: SetGame
+      - m_Target: {fileID: 539736589}
+        m_TargetAssemblyTypeName: UIPanel, Assembly-CSharp
+        m_MethodName: OnContinueClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3286,6 +3284,7 @@ GameObject:
   - component: {fileID: 539736585}
   - component: {fileID: 539736584}
   - component: {fileID: 539736588}
+  - component: {fileID: 539736589}
   m_Layer: 5
   m_Name: UICanvas
   m_TagString: Untagged
@@ -3389,11 +3388,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   safeAreaUi: {fileID: 1282072551}
-  stateMachine: {fileID: 2011573303}
   menuCanvas: {fileID: 1086704827}
   gameCanvas: {fileID: 582579687}
   loseCanvas: {fileID: 472724771}
   winCanvas: {fileID: 1520745566}
+--- !u!114 &539736589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539736583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1242ca9801e8a7458e367e3ea52985a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &552053214
 GameObject:
   m_ObjectHideFlags: 0
@@ -4473,7 +4483,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4489fc118e0a544195f6cfd072d9d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerManager: {fileID: 612525535}
   rewardCoins: {fileID: 100842933}
   sfxPlayer: {fileID: 610679004}
   crunchSFX: {fileID: 11400000, guid: 8826ae9650e4b2442b50d8ec7353ec7b, type: 2}
@@ -4648,6 +4657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocksRoot: {fileID: 1177403045}
+  crunchDuration: 0.015
 --- !u!1 &675475739
 GameObject:
   m_ObjectHideFlags: 0
@@ -4981,9 +4991,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2011573303}
-        m_TargetAssemblyTypeName: GameStateMachine, Assembly-CSharp
-        m_MethodName: SetMenu
+      - m_Target: {fileID: 539736589}
+        m_TargetAssemblyTypeName: UIPanel, Assembly-CSharp
+        m_MethodName: OnQuitClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6960,8 +6970,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d70850e17409fd4eb43d8f4232ad04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerManager: {fileID: 612525535}
-  gameStateMachine: {fileID: 2011573303}
 --- !u!1 &958707976
 GameObject:
   m_ObjectHideFlags: 0
@@ -7082,8 +7090,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a7912cac6c1034fa544364c1fb9721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateMachine: {fileID: 2011573303}
-  towerManager: {fileID: 612525535}
   pools:
   - {fileID: 797585326}
   - {fileID: 988431440}
@@ -7132,8 +7138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea58446f9b464634d8411f82ce7c9388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStateMachine: {fileID: 2011573303}
-  towerManager: {fileID: 612525535}
   winPool: {fileID: 1075505343}
   crunchPool: {fileID: 1148834238}
   blockAddedPool: {fileID: 676958566}
@@ -7336,7 +7340,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b22c0727480ac3e42acd0544ee1ecf55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateMachine: {fileID: 2011573303}
 --- !u!4 &1020656873
 Transform:
   m_ObjectHideFlags: 0
@@ -8126,8 +8129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63218b9767224974aa58ae54e9d609b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerManager: {fileID: 612525535}
-  gameStateMachine: {fileID: 2011573303}
   levelInitializer: {fileID: 1664958252}
 --- !u!4 &1105158534
 Transform:
@@ -8157,7 +8158,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 1926805597}
-  gameStateMachine: {fileID: 2011573303}
 --- !u!1 &1124072501
 GameObject:
   m_ObjectHideFlags: 0
@@ -10924,7 +10924,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a4417dd5d7d9742af737f1c64ae8f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStateMachine: {fileID: 2011573303}
   playerScriptableModel: {fileID: 11400000, guid: 60a5ec19c3a3f544185b1e301dfe6c57, type: 2}
   pointManager: {fileID: 1706641165}
 --- !u!4 &1586540179
@@ -11420,11 +11419,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16227239c89e8394fa9239c820f47a63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 883410044}
-  animationDuration: 0.4
-  goTextDuration: 0.2
-  countdownGroup: {fileID: 1717828997}
-  gameStateMachine: {fileID: 2011573303}
+  goDuration: 0.25
+  countdownValue: 3
+  goText: "\u0412\u043F\u0435\u0440\u0435\u0434!"
 --- !u!1 &1654787077
 GameObject:
   m_ObjectHideFlags: 0
@@ -11492,8 +11489,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d01e22fedf1528b41882805864429379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStateMachine: {fileID: 2011573303}
-  towerManager: {fileID: 612525535}
   pointsManager: {fileID: 1706641165}
   heightManager: {fileID: 1706641167}
   timer: {fileID: 1926805597}
@@ -11509,13 +11504,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea684a1173c7371469329377b888af53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 1926805597}
   levelsData: {fileID: 11400000, guid: 9eb8d8718439f9a4d8f6201c6d1f9fc3, type: 2}
   playerData: {fileID: 11400000, guid: 60a5ec19c3a3f544185b1e301dfe6c57, type: 2}
-  spawner: {fileID: 962313819}
-  stateMachine: {fileID: 2011573303}
   levelReseter: {fileID: 1664958251}
-  mainCamera: {fileID: 330585545}
+  spawner: {fileID: 962313819}
+  timer: {fileID: 1926805597}
 --- !u!4 &1664958253
 Transform:
   m_ObjectHideFlags: 0
@@ -11636,7 +11629,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 056c99a0033c3ed4dabe364d43b851d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerManager: {fileID: 612525535}
 --- !u!4 &1706641166
 Transform:
   m_ObjectHideFlags: 0
@@ -11664,7 +11656,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d3dbb90ef228f24099dcacde4dd83f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerManager: {fileID: 612525535}
 --- !u!1 &1707179922
 GameObject:
   m_ObjectHideFlags: 0
@@ -11798,6 +11789,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707179922}
   m_CullTransparentMesh: 1
+--- !u!1 &1711642872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1711642875}
+  - component: {fileID: 1711642874}
+  - component: {fileID: 1711642873}
+  m_Layer: 0
+  m_Name: SceneContext
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1711642873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711642872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c36936658b805d8438681875be92c553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerManager: {fileID: 612525535}
+--- !u!114 &1711642874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711642872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89715ad69b973a14899afa2c6730b30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObjectInstallers: []
+  _monoInstallers:
+  - {fileID: 1711642873}
+  _installerPrefabs: []
+  _autoRun: 1
+  OnPreInstall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPostInstall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPreResolve:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPostResolve:
+    m_PersistentCalls:
+      m_Calls: []
+  _parentNewObjectsUnderSceneContext: 0
+  _contractNames: []
+  _parentContractNames: []
+--- !u!4 &1711642875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711642872}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1712748669
 GameObject:
   m_ObjectHideFlags: 0
@@ -11887,6 +11956,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1717828995}
   - component: {fileID: 1717828997}
+  - component: {fileID: 1717828998}
   m_Layer: 5
   m_Name: GameCountdownBlock
   m_TagString: Untagged
@@ -11927,6 +11997,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1717828998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717828994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d4c004121d1bc54591e1d82dad8f8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdown: {fileID: 1641801857}
+  timerText: {fileID: 883410044}
+  countdownGroup: {fileID: 1717828997}
+  animationDuration: 0.25
+  startScale: 0.5
+  endScale: 1.2
 --- !u!1 &1733974267
 GameObject:
   m_ObjectHideFlags: 0
@@ -13008,7 +13096,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2011573303}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameStateMachine, Assembly-CSharp
         m_MethodName: SetGame
         m_Mode: 1
@@ -13703,50 +13791,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988027395}
   m_CullTransparentMesh: 1
---- !u!1 &2011573302
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2011573304}
-  - component: {fileID: 2011573303}
-  m_Layer: 0
-  m_Name: GameStateHub
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2011573303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011573302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ef968a7dd4787d4b80658dc7d7e2ba9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &2011573304
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011573302}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.99, y: 3.227435, z: 19.147919}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2026773505
 GameObject:
   m_ObjectHideFlags: 0
@@ -15078,7 +15122,6 @@ SceneRoots:
   - {fileID: 962313820}
   - {fileID: 612525533}
   - {fileID: 1706641166}
-  - {fileID: 2011573304}
   - {fileID: 2042718287}
   - {fileID: 610679006}
   - {fileID: 1105158534}
@@ -15087,3 +15130,4 @@ SceneRoots:
   - {fileID: 1664958253}
   - {fileID: 308269458}
   - {fileID: 977384922}
+  - {fileID: 1711642875}

@@ -1,10 +1,12 @@
 using System;
 using TMPro;
 using UnityEngine;
+using Zenject;
 
+// оличество очков (денег) на конкретном уровне
 public class PointsManager : MonoBehaviour
 {
-    [SerializeField] TowerManager towerManager;
+    [Inject] TowerManager towerManager;
     public event Action<int> OnCoinsChanged;
     private int coinsCount = 0;
     public int CoinsCount => coinsCount;

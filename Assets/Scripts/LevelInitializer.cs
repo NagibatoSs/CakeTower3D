@@ -1,15 +1,16 @@
 using System;
 using UnityEngine;
+using Zenject;
 
 public class LevelInitializer : MonoBehaviour
 {
-    [SerializeField] Timer timer;
+    [Inject] GameStateMachine stateMachine;
     [SerializeField] LevelsScriptableModel levelsData;
     [SerializeField] PlayerScriptableModel playerData;
-    [SerializeField] BlockSpawner spawner;
-    [SerializeField] GameStateMachine stateMachine;
     [SerializeField] LevelDataReseter levelReseter;
-    [SerializeField] Camera mainCamera;
+
+    [SerializeField] BlockSpawner spawner;
+    [SerializeField] Timer timer;
 
     Vector3 cameraStartPos;
     Vector3 spawnStartPos;
@@ -30,8 +31,8 @@ public class LevelInitializer : MonoBehaviour
 
     private void Start()
     {
-        if (mainCamera != null)
-            cameraStartPos = mainCamera.transform.position;
+        if (Camera.main != null)
+            cameraStartPos = Camera.main.transform.position;
 
         if (spawner != null)
             spawnStartPos = spawner.transform.position;
@@ -58,11 +59,11 @@ public class LevelInitializer : MonoBehaviour
     {
         GetCurrentLevel();
         timer.SetTime(currentLevel.TimeLimitInSeconds);
-        spawner.StartGame();
 
-        var camFollow = mainCamera?.GetComponent<CameraFollowing>();
+        var camFollow = Camera.main?.GetComponent<CameraFollowing>();
         if (camFollow != null)
             camFollow.ResetPosition(cameraStartPos, spawnStartPos);
+        spawner.StartGame();
 
         OnInitialize?.Invoke();
     }

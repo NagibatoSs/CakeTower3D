@@ -1,9 +1,10 @@
 using UnityEngine;
+using Zenject;
 
 public class VFXManager : MonoBehaviour
 {
-    [SerializeField] GameStateMachine gameStateMachine;
-    [SerializeField] TowerManager towerManager;
+    [Inject] GameStateMachine gameStateMachine;
+    [Inject] TowerManager towerManager;
     [SerializeField] Pool winPool;
     [SerializeField] Pool crunchPool;
     [SerializeField] Pool blockAddedPool;

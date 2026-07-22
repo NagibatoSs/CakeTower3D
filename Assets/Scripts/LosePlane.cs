@@ -1,9 +1,10 @@
 using UnityEngine;
+using Zenject;
 
 public class LosePlane : MonoBehaviour
 {
-    [SerializeField] TowerManager towerManager;
-    [SerializeField] GameStateMachine gameStateMachine;
+    [Inject] TowerManager towerManager;
+    [Inject] GameStateMachine gameStateMachine;
     private void OnTriggerEnter(Collider other)
     {
         if (towerManager.TowerRoot == other.gameObject)

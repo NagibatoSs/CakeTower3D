@@ -24,11 +24,6 @@ public class Timer : MonoBehaviour
         countdownController.OnCountdownFinished -= StartTimer;
     }
 
-    //private void Start() 
-    //{
-    //    OnSecondChanged?.Invoke(Mathf.CeilToInt(startTime));
-    //}
-
     public void SetTime(float time)
     {
         startTime = time;

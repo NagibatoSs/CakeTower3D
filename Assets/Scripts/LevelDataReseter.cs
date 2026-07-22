@@ -1,9 +1,9 @@
 using UnityEngine;
+using Zenject;
 
 public class LevelDataReseter : MonoBehaviour
 {
-    [SerializeField] GameStateMachine gameStateMachine;
-    [SerializeField] TowerManager towerManager;
+    [Inject] TowerManager towerManager;
     [SerializeField] PointsManager pointsManager;
     [SerializeField] TowerHeightManager heightManager;
     [SerializeField] Timer timer;

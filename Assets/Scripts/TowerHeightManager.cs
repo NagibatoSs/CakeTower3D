@@ -1,9 +1,10 @@
 using System;
 using UnityEngine;
+using Zenject;
 
 public class TowerHeightManager : MonoBehaviour
 {
-    [SerializeField] TowerManager towerManager;
+    [Inject] TowerManager towerManager;
     public event Action<int> OnHeightChanged;
     private int height = 0;
     public int Height => height;

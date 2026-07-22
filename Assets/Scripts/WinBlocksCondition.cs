@@ -1,10 +1,11 @@
 using System;
 using UnityEngine;
+using Zenject;
 
 public class WinBlocksCondition : MonoBehaviour
 {
-    [SerializeField] TowerManager towerManager;
-    [SerializeField] GameStateMachine gameStateMachine;
+    [Inject] TowerManager towerManager;
+    [Inject] GameStateMachine gameStateMachine;
     [SerializeField] LevelInitializer levelInitializer;
 
     private void OnEnable()

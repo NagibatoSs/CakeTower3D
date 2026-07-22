@@ -2,14 +2,20 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 public class BlockSpawner : MonoBehaviour
 {
-    //[SerializeField] Transform blocksRoot;
-    [SerializeField] GameStateMachine stateMachine;
-    [SerializeField] TowerManager towerManager;
+    [Inject] TowerManager towerManager;
     [SerializeField] Pool[] pools;
-    private int poolIdx;
+    private IPoolSelector poolSelector;
+
+    [Inject]
+    public void Construct(IPoolSelector poolSelector)
+    {
+        this.poolSelector = poolSelector;
+    }
+
     private void OnEnable()
     {
         towerManager.OnBlockAdded += SpawnNewBlock;
@@ -20,7 +26,6 @@ public class BlockSpawner : MonoBehaviour
     }
     public void StartGame()
     {
-        poolIdx = 0;
         Spawn();
     }
 
@@ -31,16 +36,11 @@ public class BlockSpawner : MonoBehaviour
 
     private void Spawn()
     {
-        if (poolIdx == pools.Length)
-        {
-            poolIdx = 0;
-        }
-        var block = pools[poolIdx].GetFromPool();
-        block.transform.SetParent(pools[poolIdx].transform);
+        var pool = poolSelector.SelectPool(pools);
+        var block = pool.GetFromPool();
+        block.transform.SetParent(pool.transform);
         block.transform.position = transform.position;
         block.transform.rotation = Quaternion.identity;
-        towerManager.SetDependencies(block.GetComponent<LandingDetector>());
-        poolIdx++;
-
+        towerManager.Subscribe(block.gameObject);
     }
 }
