@@ -12,6 +12,7 @@ public class GameplaySceneInstaller : MonoInstaller
     [SerializeField] LevelsScriptableModel levelaScriptableModel;
     [SerializeField] LevelDataReseter levelReseter;
     [SerializeField] RewardSystem rewardSystem;
+    [SerializeField] MusicController musicController;
     public override void InstallBindings()
     {
         Container.Bind<GameStateMachine>().AsSingle();
@@ -25,6 +26,7 @@ public class GameplaySceneInstaller : MonoInstaller
         Container.Bind<LevelsScriptableModel>().FromInstance(levelaScriptableModel).AsSingle();
         Container.Bind<LevelDataReseter>().FromInstance(levelReseter).AsSingle();
         Container.Bind<RewardSystem>().FromInstance(rewardSystem).AsSingle();
+        Container.Bind<MusicController>().FromInstance(musicController).AsSingle();
 
     }
 }
