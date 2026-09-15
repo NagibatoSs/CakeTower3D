@@ -17,7 +17,7 @@ public class UIAnimateScale : MonoBehaviour
         minScale = transform.localScale * minScaleCoef;
     }
 
-    private void Start()
+    private void OnEnable()
     {
         Animate();
     }
@@ -29,10 +29,11 @@ public class UIAnimateScale : MonoBehaviour
     }
     private IEnumerator AnimateScale()
     {
+        float time;
         while (true)
         {
 
-            float time = Mathf.PingPong(2* elapsedTime / animationTime, 1f);
+            time = Mathf.PingPong(2* elapsedTime / animationTime, 1f);
 
             transform.localScale = Vector3.Lerp(minScale, maxScale, easing.Evaluate(time));
             elapsedTime += Time.deltaTime;

@@ -1,3 +1,5 @@
+using Assets.Scripts.UI;
+using System;
 using UnityEngine;
 using Zenject;
 
@@ -28,5 +30,16 @@ public class GameplaySceneInstaller : MonoInstaller
         Container.Bind<RewardSystem>().FromInstance(rewardSystem).AsSingle();
         Container.Bind<MusicController>().FromInstance(musicController).AsSingle();
 
+        Container.Bind<IAudioState>()
+            .FromMethod((InjectContext context) =>
+            {
+                var handler = (AudioButtonUIHandler)context.ObjectInstance;
+                return handler.AudioType switch
+                {
+                    GameAudioType.SFX => Container.Resolve<SFXController>(),
+                    GameAudioType.Music => Container.Resolve<MusicController>(),
+                    _ => throw new ArgumentOutOfRangeException()
+                };
+            }).WhenInjectedInto<AudioButtonUIHandler>();
     }
 }

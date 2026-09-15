@@ -2763,6 +2763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79daeba7e9f2228449f3d615124a5de3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioType: 0
   image: {fileID: 477996559}
   spriteOn: {fileID: 21300092, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   spriteOff: {fileID: 1103714863, guid: fe606be6257c9b444a598400832223fa, type: 3}
@@ -2778,6 +2779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79daeba7e9f2228449f3d615124a5de3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioType: 0
   image: {fileID: 1239995146}
   spriteOn: {fileID: 21300084, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   spriteOff: {fileID: 495172592, guid: fe606be6257c9b444a598400832223fa, type: 3}
@@ -5783,9 +5785,9 @@ GameObject:
   - component: {fileID: 834176487}
   - component: {fileID: 834176491}
   - component: {fileID: 834176490}
-  - component: {fileID: 834176493}
-  - component: {fileID: 834176492}
   - component: {fileID: 834176494}
+  - component: {fileID: 834176496}
+  - component: {fileID: 834176495}
   m_Layer: 5
   m_Name: SoundBlock
   m_TagString: Untagged
@@ -5881,7 +5883,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 834176493}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SpriteToggle, Assembly-CSharp
         m_MethodName: ToggleSprite
         m_Mode: 1
@@ -5905,7 +5907,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 834176492}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SpriteToggle, Assembly-CSharp
         m_MethodName: ToggleSprite
         m_Mode: 1
@@ -5985,36 +5987,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 2, y: -2}
   m_UseGraphicAlpha: 1
---- !u!114 &834176492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 834176485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84404ffa70540a5458ce7beb54e7be0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  image: {fileID: 1417876974}
-  spriteOn: {fileID: 21300086, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
-  spriteOff: {fileID: -478702101, guid: fe606be6257c9b444a598400832223fa, type: 3}
---- !u!114 &834176493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 834176485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84404ffa70540a5458ce7beb54e7be0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  image: {fileID: 834176488}
-  spriteOn: {fileID: 21300092, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
-  spriteOff: {fileID: 1103714863, guid: fe606be6257c9b444a598400832223fa, type: 3}
 --- !u!114 &834176494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6053,6 +6025,38 @@ MonoBehaviour:
     m_RotationOrder: 4
   animationTime: 0.35
   scaleCoef: 1.05
+--- !u!114 &834176495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834176485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79daeba7e9f2228449f3d615124a5de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioType: 1
+  image: {fileID: 834176488}
+  spriteOn: {fileID: 21300092, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
+  spriteOff: {fileID: 1103714863, guid: fe606be6257c9b444a598400832223fa, type: 3}
+--- !u!114 &834176496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834176485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79daeba7e9f2228449f3d615124a5de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioType: 1
+  image: {fileID: 1417876974}
+  spriteOn: {fileID: 21300086, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
+  spriteOff: {fileID: -478702101, guid: fe606be6257c9b444a598400832223fa, type: 3}
 --- !u!1 &840087870
 GameObject:
   m_ObjectHideFlags: 0
@@ -7887,8 +7891,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   animationTime: 2
-  maxScaleCoef: 1.2
-  minScaleCoef: 1
+  maxScaleCoef: 1.1
+  minScaleCoef: 0.9
 --- !u!1 &1048782968
 GameObject:
   m_ObjectHideFlags: 0
@@ -13348,6 +13352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79daeba7e9f2228449f3d615124a5de3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioType: 0
   image: {fileID: 1924722092}
   spriteOn: {fileID: 21300092, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   spriteOff: {fileID: 1103714863, guid: fe606be6257c9b444a598400832223fa, type: 3}
@@ -13363,6 +13368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79daeba7e9f2228449f3d615124a5de3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioType: 0
   image: {fileID: 1130994927}
   spriteOn: {fileID: 21300084, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   spriteOff: {fileID: 495172592, guid: fe606be6257c9b444a598400832223fa, type: 3}
@@ -14107,8 +14113,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   animationTime: 2
-  maxScaleCoef: 1.2
-  minScaleCoef: 1
+  maxScaleCoef: 1.1
+  minScaleCoef: 0.9
 --- !u!1 &1980910098
 GameObject:
   m_ObjectHideFlags: 0
@@ -14552,9 +14558,9 @@ GameObject:
   - component: {fileID: 2052276662}
   - component: {fileID: 2052276661}
   - component: {fileID: 2052276660}
-  - component: {fileID: 2052276659}
-  - component: {fileID: 2052276658}
   - component: {fileID: 2052276665}
+  - component: {fileID: 2052276667}
+  - component: {fileID: 2052276666}
   m_Layer: 5
   m_Name: SoundBlock
   m_TagString: Untagged
@@ -14582,36 +14588,6 @@ RectTransform:
   m_AnchoredPosition: {x: 100, y: 2.999971}
   m_SizeDelta: {x: 140, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2052276658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2052276656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84404ffa70540a5458ce7beb54e7be0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  image: {fileID: 1923497822}
-  spriteOn: {fileID: 1959088718, guid: e610b2948164a1e4e81467f4ce10d8df, type: 3}
-  spriteOff: {fileID: -478702101, guid: fe606be6257c9b444a598400832223fa, type: 3}
---- !u!114 &2052276659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2052276656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84404ffa70540a5458ce7beb54e7be0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  image: {fileID: 2052276663}
-  spriteOn: {fileID: 21300092, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
-  spriteOff: {fileID: 1103714863, guid: fe606be6257c9b444a598400832223fa, type: 3}
 --- !u!114 &2052276660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14710,7 +14686,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2052276659}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SpriteToggle, Assembly-CSharp
         m_MethodName: ToggleSprite
         m_Mode: 1
@@ -14722,7 +14698,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2052276658}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SpriteToggle, Assembly-CSharp
         m_MethodName: ToggleSprite
         m_Mode: 1
@@ -14822,6 +14798,38 @@ MonoBehaviour:
     m_RotationOrder: 4
   animationTime: 0.35
   scaleCoef: 1.05
+--- !u!114 &2052276666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052276656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79daeba7e9f2228449f3d615124a5de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioType: 1
+  image: {fileID: 2052276663}
+  spriteOn: {fileID: 21300092, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
+  spriteOff: {fileID: 1103714863, guid: fe606be6257c9b444a598400832223fa, type: 3}
+--- !u!114 &2052276667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052276656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79daeba7e9f2228449f3d615124a5de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioType: 1
+  image: {fileID: 1923497822}
+  spriteOn: {fileID: 21300086, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
+  spriteOff: {fileID: -478702101, guid: fe606be6257c9b444a598400832223fa, type: 3}
 --- !u!1 &2074538684
 GameObject:
   m_ObjectHideFlags: 0

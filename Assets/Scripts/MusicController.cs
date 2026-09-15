@@ -1,16 +1,20 @@
+using Assets.Scripts.UI;
 using System;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class MusicController : MonoBehaviour
+public class MusicController : MonoBehaviour, IAudioState
 {
     [SerializeField] private AudioSource musicSource;
-    public event Action<bool> OnMusicStateChanged;
-    public bool IsMusicEnabled { get; private set; }
+    public bool IsEnabled => isMusicEnabled;
+
+    public event Action<bool> OnStateChanged;
+
+    private bool isMusicEnabled;
 
     void Start()
     {
-        IsMusicEnabled = true;
+        isMusicEnabled = true;
         if (musicSource == null)
             musicSource = GetComponent<AudioSource>();
         musicSource.Play();
@@ -31,16 +35,17 @@ public class MusicController : MonoBehaviour
             MuteMusic();
         else
             UnmuteMusic();
-        OnMusicStateChanged?.Invoke(IsMusicEnabled);
     }
     public void MuteMusic()
     {
         musicSource.mute = true;
-        IsMusicEnabled = false;
+        isMusicEnabled = false;
+        OnStateChanged?.Invoke(IsEnabled);
     }
     public void UnmuteMusic()
     {
         musicSource.mute = false;
-        IsMusicEnabled = true;
+        isMusicEnabled = true;
+        OnStateChanged?.Invoke(IsEnabled);
     }
 }

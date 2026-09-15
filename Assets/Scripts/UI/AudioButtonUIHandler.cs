@@ -9,22 +9,30 @@ using Zenject;
 
 namespace Assets.Scripts.UI
 {
-    class MusicButtonUIHandler: MonoBehaviour
+    class AudioButtonUIHandler: MonoBehaviour
     {
-        [Inject] private MusicController musicController;
+        [SerializeField] private GameAudioType audioType;
+        public GameAudioType AudioType => audioType;
         [SerializeField] private Image image;
         [SerializeField] private Sprite spriteOn;
         [SerializeField] private Sprite spriteOff;
 
+        private IAudioState audioStateController;
+
+        [Inject]
+        private void Construct(IAudioState audioState)
+        {
+            audioStateController = audioState;
+        }
         private void OnEnable()
         {
-            musicController.OnMusicStateChanged += UpdateImage;
-            UpdateImage(musicController.IsMusicEnabled);
+            audioStateController.OnStateChanged += UpdateImage;
+            UpdateImage(audioStateController.IsEnabled);
         }
 
         private void OnDisable()
         {
-            musicController.OnMusicStateChanged -= UpdateImage;
+            audioStateController.OnStateChanged -= UpdateImage;
         }
 
         private void UpdateImage(bool isEnabled)
