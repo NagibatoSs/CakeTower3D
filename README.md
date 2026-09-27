@@ -1,53 +1,54 @@
-# Cake Tower 3D 
+# Cake Tower 3D
 
-Жанры: Arcade, Casual, Tower Building
+Genres: Arcade, Casual, Tower Building
 
-**Скачать:** [Cake Tower 3D](https://disk.yandex.ru/d/gnrCYrMEjpGUSw)
+**Download:** [Cake Tower 3D](https://disk.yandex.ru/d/gnrCYrMEjpGUSw)
 
 <p align="center">
   <img src="./Screenshots/gameplayVideo.gif" width="175"/>
 </p>
 
-## Описание:
-Авторская игра, в которой игрок строит башню из блоков-тортов.
-Каждый блок последовательно изменяет размер: увеличивается-уменьшается,
-в момент клика по экрану блок фиксирует свой размер и падает на башню.
-Падающий блок взаимодействует с другими блоками башни, уничтожая блоки меньшего размера.
-Цель игры - за ограниченное количество времени построить башню заданной высоты.
-Поражение наступает при падении блоков башни или при истечении таймера.
+## Description:
+An original game where the player builds a tower out of cake blocks.
+Each block keeps changing its size, growing and shrinking,
+and when the player taps the screen, the block locks its size and falls onto the tower.
+The falling block interacts with the other blocks of the tower and destroys the smaller ones.
+The goal is to build a tower of the target height within a limited time.
+The player loses if the tower blocks fall or the timer runs out.
 
 <p align="center">
   <img src="./Screenshots/screen1.png" width="200"/>
   <img src="./Screenshots/screen2.png" width="200"/>
 </p>
 
-## Ключевые особенности:
-- Механика изменения размера блоков с фиксацией по клику
-- Уничтожение блоков меньшего размера при падении нового блока
-- Реализация башни на основе стека
-- Использование событий для игровых реакций
-- Управление игровым циклом через Finite State Machine
+## Key features:
+- Block resizing mechanic with size locking on tap
+- Smaller blocks are destroyed when a new block falls on them
+- Stack-based tower implementation
+- Events used for game reactions
+- Game loop managed by a Finite State Machine
 
-## Использованные технологии и подходы:
-- Component-based архитектура
-- Event-driven взаимодействие между игровыми системами
-- Finite State Machine для управления игровым циклом (меню, игра, победа, поражение)
-- Dependency Injection с использованием Zenject для управления зависимостями игровых систем
-- Использование Manager-компонентов для координации подсистем (аудио, VFX, игровая логика)
-- Object Pooling для блоков башни и эффектов (уменьшение количества Instantiate/Destroy)
-- ScriptableObjects для хранения данных (уровни, прогресс игрока, настройки sfx)
-- Сохранение и загрузка данных (PlayerPrefs)
-- Адаптивный UI (Safe Area, поддержка разных экранов вертикальной ориентации)
-- Работа с VFX, Particle System и скриптовыми анимациями
-- Работа с музыкой и звуковыми эффектами
-- Работа с текстурами и визуальным оформлением игровых объектов
+## Technologies and approaches:
+- Component-based architecture
+- Event-driven communication between game systems
+- Finite State Machine for the game loop (menu, gameplay, win, lose)
+- Dependency Injection with Zenject to manage dependencies between game systems
+- Manager components to coordinate subsystems (audio, VFX, game logic)
+- Object Pooling for tower blocks and effects (fewer Instantiate/Destroy calls)
+- ScriptableObjects for data storage (levels, player progress, SFX settings)
+- Saving and loading data (PlayerPrefs)
+- Strategy pattern for choosing block spawn order
+- Adaptive UI (Safe Area, support for different portrait screens)
+- VFX, Particle System and scripted animations
+- Music and sound effects
+- Textures and visual design of game objects
+- Performance profiling with Unity Profiler
 
-## Возможные улучшения реализации:
-- Улучшить настройки сцены (изменить фон, пол, позицию башни)
-- Разделить ответственность TowerManager на более мелкие (управление структурой башни, 
-логика "съедания" блоков)
-- Повысить переиспользуемость отдельных компонентов
-- Реализовать адаптивный интерфейс под горизонтальную ориентацию
-- Стандартизировать стиль наименований и структуру проекта
-- Добавить сохранение и загрузку параметров настроек
-- Почистить проект от неиспользуемых ассетов
+## Possible improvements:
+- Improve the scene setup (change the background, floor and tower position)
+- Split TowerManager into smaller components (tower structure management, block "eating" logic)
+- Make individual components more reusable
+- Add adaptive UI for landscape orientation
+- Standardize naming style and project structure
+- Add saving and loading of settings
+- Clean up unused assets
