@@ -18,6 +18,6 @@ public class LevelUIHandler : MonoBehaviour
 
     private void UpdateUI()
     {
-        currentLevelText.text = "Уровень " + levelInitializer.CurrentLevel.ToString();
+        currentLevelText.text = "Level " + levelInitializer.CurrentLevel.ToString();
     }
 }

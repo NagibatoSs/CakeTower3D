@@ -29,7 +29,6 @@ public class CameraFollowing : MonoBehaviour
 
     private void UpdatePosition(GameObject newBlock)
     {
-        Debug.Log($"Camera received {newBlock.name} pos {newBlock.transform.position}");
         StartCoroutine(UpdatePositionCoroutine(newBlock));
     }
     private IEnumerator UpdatePositionCoroutine(GameObject block)

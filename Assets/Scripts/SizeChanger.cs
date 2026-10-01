@@ -57,9 +57,11 @@ public class SizeChanger : MonoBehaviour
 
     private void StopResizing()
     {
+        Debug.Log($"Drop frame {Time.frameCount}, from {name}");
         rigidbody.isKinematic = false;
         isResizing = false;
         isLowering = false;
+        UnsubscribeResize();
     }
 
 }

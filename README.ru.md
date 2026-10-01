@@ -1,5 +1,7 @@
 # Cake Tower 3D
 
+[English](README.md) | **Русский**
+
 Жанры: Arcade, Casual, Tower Building
 
 **Скачать:** [Cake Tower 3D](https://disk.yandex.ru/d/gnrCYrMEjpGUSw)
