@@ -4,7 +4,8 @@
 
 Жанры: Arcade, Casual, Tower Building
 
-**Скачать:** [Cake Tower 3D](https://disk.yandex.ru/d/gnrCYrMEjpGUSw)
+**itch.io:** [Cake Tower 3D](https://nagibatoss.itch.io/cake-tower-3d)  
+**APK:** [Скачать](https://disk.yandex.ru/d/gnrCYrMEjpGUSw)
 
 <p align="center">
   <img src="./Screenshots/gameplayVideo.gif" width="175"/>
